@@ -1,8 +1,19 @@
 <script setup>
+import {LuxLibraryHeader, LuxMenuBar} from 'lux-design-system'
 import HelloWorld from './components/HelloWorld.vue'
 </script>
 
 <template>
+  <lux-library-header app-name="A cool vue app" abbr-name="LTR" app-url="https://catalog.princeton.edu" theme="dark">
+      <lux-menu-bar type="main-menu" :menu-items="[
+          {name: 'Help', component: 'Help', href: '/help/'},
+          {name: 'Feedback', component: 'Feedback', href: '/feedback/'},
+          {name: 'Your Account', component: 'Account', href: '/account/', children: [
+            {name: 'Logout', component: 'Logout', href: '/account/'}
+          ]}
+        ]"
+      ></lux-menu-bar>
+    </lux-library-header>
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
@@ -11,7 +22,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="Vite + Vue + Lux" />
 </template>
 
 <style scoped>

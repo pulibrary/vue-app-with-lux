@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { LuxInputButton, LuxIconApproved, LuxIconBase } from 'lux-design-system'
+import { LuxInputButton, LuxIconApproved, LuxIconBase, LuxInputRadio } from 'lux-design-system'
 
 
 defineProps({
@@ -24,5 +24,13 @@ const count = ref(0)
     <lux-icon-base width="12" height="12" icon-name="Approved">
       <lux-icon-approved></lux-icon-approved>
     </lux-icon-base>
+    <lux-input-radio
+      id="foo"
+      vertical groupLabel="Where is my mind?"
+      :options="[
+        {name: 'radio-group-name', value: 'In the clouds', id: 'radio-opt1', required: true},
+        {name: 'radio-group-name', value: 'I don\'t know', id: 'radio-opt2', disabled: true}
+      ]">
+    </lux-input-radio>
   <h1>{{ msg }}</h1>
 </template>
